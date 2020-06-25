@@ -4,6 +4,7 @@ head{
 body{
   background-color:blue;
 }
-h1,h3{
+h1,h3,p{
+font-family:sans-serif;
   color:white;
 }
