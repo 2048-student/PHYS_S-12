@@ -1,7 +1,7 @@
 html{
   background-color:#87ceeb;
 }
-h1,h3,p{
+h1,h3,p,div,u{
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   color:white;
 }
