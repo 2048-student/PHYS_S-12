@@ -1,9 +1,11 @@
 html{
   background-color:#87ceeb;
 }
-col-sm-4,h1,h3,p,u{
+h1,h3,p,u{
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   color:white;
+}
+col-sm-4{
   width: 300px;
   border: 15px solid #99ffcc;
   padding: 50px;
