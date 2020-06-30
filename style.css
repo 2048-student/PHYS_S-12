@@ -1,11 +1,9 @@
 html{
   background-color:#87ceeb;
 }
-h1,h3,p,div,u{
+h1,h3,p,u{
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   color:white;
-}
-div{
   width: 300px;
   border: 15px solid #99ffcc;
   padding: 50px;
