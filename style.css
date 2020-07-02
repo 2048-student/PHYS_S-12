@@ -6,6 +6,7 @@ h1,h3,p{
   color:black;
 }
 .row{
+  background-color:#87ceeb;
   border: 15px solid #99ffcc;
   padding: 50px;
   margin: 20px;
