@@ -1,11 +1,11 @@
-body,div{
+body{
   background-color:#87ceeb;
 }
 h1,h3,p{
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   color:white;
 }
-row{
+.row{
   border: 15px solid #99ffcc;
   padding: 50px;
   margin: 20px;
