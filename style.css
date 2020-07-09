@@ -12,36 +12,30 @@ h1,h3,p{
   margin: 20px;
   background-color:#87ceeb;
 }
-.sidenav {
-  height: 100%;
-  width: 160px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  overflow-x: hidden;
-  padding-top:20px
+.topnav {
+  width:100%;
   background-color: #fff;
   overflow: hidden;
 }
-.sidenav a {
+.topnav a {
+  float: left;
   padding: 6px 8px 6px 16px;
   display: block;
   color: #5e6472;
   text-align: center;
   padding: 5px 7px;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  font-size: 12px;
+  font-size: 10px;
 }
-.sidenav a.active{
+.topnav a.active{
   background-color: #5e6472;
   color: #fff;
 }
-.sidenav a:hover{
+.topnav a:hover{
   background-color: #5e6472;
   color: #fff;
 }
 
-.sidenav .icon{
+.topnav .icon{
   display:none;
 }
