@@ -12,11 +12,11 @@ h1,h3,p{
   margin: 20px;
   background-color:#87ceeb;
 }
-.topnav {
+.sidenav {
   background-color: #fff;
   overflow: hidden;
 }
-.topnav a {
+.sidenav a {
   float: center;
   display: block;
   color: #5e6472;
@@ -25,15 +25,15 @@ h1,h3,p{
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-size: 12px;
 }
-.topnav a.active{
+.sidenav a.active{
   background-color: #5e6472;
   color: #fff;
 }
-.topnav a:hover{
+.sidenav a:hover{
   background-color: #5e6472;
   color: #fff;
 }
 
-.topnav .icon{
+.sidenav .icon{
   display:none;
 }
