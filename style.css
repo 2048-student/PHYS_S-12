@@ -17,10 +17,10 @@ h1,h3,p{
   overflow: hidden;
 }
 .topnav a {
-  float: left;
+  float: center;
   display: block;
   color: #5e6472;
-  text-align: left;
+  text-align: center;
   padding: 5px 7px;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-size: 12px;
