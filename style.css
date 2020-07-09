@@ -12,3 +12,28 @@ h1,h3,p{
   margin: 20px;
   background-color:#87ceeb;
 }
+.topnav {
+  background-color: #fff;
+  overflow: hidden;
+}
+.topnav a {
+  float: left;
+  display: block;
+  color: #5e6472;
+  text-align: left;
+  padding: 5px 7px;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 12px;
+}
+.topnav a.active{
+  background-color: #5e6472;
+  color: #fff;
+}
+.topnav a:hover{
+  background-color: #5e6472;
+  color: #fff;
+}
+
+.topnav .icon{
+  display:none;
+}
