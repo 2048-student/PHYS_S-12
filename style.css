@@ -1,6 +1,6 @@
-body,div{
+/*body,div{
   background-color:#87ceeb;
-}
+}*/
 h1,h3,p{
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   color:black;
@@ -10,4 +10,5 @@ h1,h3,p{
   border: 15px solid #99ffcc;
   padding: 50px;
   margin: 20px;
+  background-color:#87ceeb;
 }
