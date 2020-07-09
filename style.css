@@ -13,11 +13,19 @@ h1,h3,p{
   background-color:#87ceeb;
 }
 .sidenav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top:20px
   background-color: #fff;
   overflow: hidden;
 }
 .sidenav a {
-  float: left;
+  padding: 6px 8px 6px 16px;
   display: block;
   color: #5e6472;
   text-align: center;
