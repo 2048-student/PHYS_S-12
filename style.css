@@ -17,7 +17,7 @@ h1,h3,p{
   overflow: hidden;
 }
 .sidenav a {
-  float: center;
+  float: left;
   display: block;
   color: #5e6472;
   text-align: center;
