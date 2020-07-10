@@ -5,11 +5,10 @@ h1,h2,h3,h4,h5,h6,p{
   color:#5e6472;
 }
 .row{
-  background-color:#87ceeb;
-  border: 15px solid #99ffcc;
+  background-color:#faf3dd;
+  border: 7px solid #ffa69e;
   padding: 20px;
   margin: 10px;
-  background-color:#87ceeb;
 }
 .topnav {
   width:100%;
