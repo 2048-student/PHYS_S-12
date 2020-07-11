@@ -38,4 +38,12 @@ color:#5e6472;
 
 .main{
   text-color:#5e6472;
+  padding-left:
+}
+.section{
+  margin-left:50px;
+  margin-right:50px;
+  margin-top:30px;
+  margin-bottom:30px;
+  border: 5px solid #5e6472;
 }
