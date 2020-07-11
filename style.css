@@ -9,6 +9,8 @@ h1,h2,h3,h4,h5,h6,p{
 h1{
 color:#5e6472;
   text-decoration:underline;
+  padding-left:30px;
+  padding-right:30px;
 }
 .topnav {
   width:100%;
