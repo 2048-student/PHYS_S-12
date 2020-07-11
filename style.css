@@ -3,12 +3,11 @@
 h1,h2,h3,h4,h5,h6,p{
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   color:#5e6472;
-  padding-left: 15px;
-  padding-right:15px;
+  padding-left: 30px;
+  padding-right:30px;
 }
 h1{
 color:#5e6472;
-  padding-top: 15px;
   text-decoration:underline;
 }
 .topnav {
