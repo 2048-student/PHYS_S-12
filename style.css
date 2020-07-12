@@ -58,4 +58,8 @@ color:#5e6472;
   margin-left:50px;
   margin-right:50px;
   border: 5px solid #5e6472;
+  position:relative;
+}
+.fieldset h2{
+  position:absolute;
 }
