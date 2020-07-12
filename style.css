@@ -1,7 +1,7 @@
 body,.main{
   background-color:#fff;
 }
-/*--------------------------text styling----------------------------*/
+/*-------------------------text styling---------------------------*/
 h1,h2,h3,h4,h5,h6,p,li{
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   color:#5e6472;
@@ -26,7 +26,7 @@ color:#5e6472;
   padding-left:20px;
   padding-right:20px;
 }
-/*--------------------------navigation bar--------------------------*/
+/*-------------------------navigation bar-------------------------*/
 .topnav {
   width:100%;
   background-color: #fff;
@@ -51,7 +51,7 @@ color:#5e6472;
   background-color: #5e6472;
   color: #fff;
 }
-/*--------------------------div sections----------------------------*/
+/*-------------------------div sections---------------------------*/
 .main{
   text-color:#5e6472;
 }
