@@ -29,6 +29,7 @@ color:#5e6472;
   width:100%;
   background-color: #fff;
   overflow: hidden;
+  position:sticky;
 }
 .topnav a {
   float: left;
