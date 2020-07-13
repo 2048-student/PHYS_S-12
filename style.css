@@ -111,10 +111,10 @@ color:#5e6472;
 }
 /*--------------------media (photos/videos)----------------------*/
 .image{
-  margin-left:7px;
-  margin-right:7px;
-  margin-top:4px;
-  margin-bottom:4px;
+  margin-left:10px;
+  margin-right:10px;
+  margin-top:7px;
+  margin-bottom:7px;
   border: 2px solid #5e6472;
   background-color:#ffa69e;
 }
