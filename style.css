@@ -94,6 +94,7 @@ color:#5e6472;
 }
 /*--------------------media (photos/videos)----------------------*/
 img{
+  display:inline-block;
   border:2px solid #5e6472;
   object-fit:scale-down;
 }
