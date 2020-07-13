@@ -37,6 +37,7 @@ color:#5e6472;
   width:100%;
   background-color: #fff;
   overflow: hidden;
+  padding-top:none;
 }
 .topnav a {
   float: left;
