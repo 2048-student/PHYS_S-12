@@ -62,7 +62,7 @@ color:#5e6472;
 /*-------------------------div sections---------------------------*/
 .main{
   color:#5e6472;
-  margin-top:30px;
+  margin-top:50px;
 }
 .section{
   margin-left:50px;
@@ -99,6 +99,7 @@ color:#5e6472;
 }
 .footer p{
   color:#fff;
+  margin-bottom:50px;
 }
 /*for images side-by-side*/
 .row{
