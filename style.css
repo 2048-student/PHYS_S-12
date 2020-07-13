@@ -63,7 +63,7 @@ color:#5e6472;
   display: none;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
   .topnav a:not(:first-child) {display: none;}
   .topnav a.icon {
     float: right;
@@ -71,7 +71,7 @@ color:#5e6472;
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
     position: absolute;
