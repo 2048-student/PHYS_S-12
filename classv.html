@@ -102,7 +102,9 @@
               const int button = 3; // button pin
               int state = 0; // this will measure the current state of the button
               int prev = 0; // this will measure the previous state of the button
+
               void setup(){pinMode (button, INPUT)} // will read the button as an input
+
               void loop(){
                 state = digitalRead(button); // read the current state of the pin
                 if(state != prev){
