@@ -181,7 +181,82 @@
       <div class="section">
         <h2>assignment</h2>
         <p>
+          For this assignment, we needed to code our board with a conditional and loop to control some output with a button input, as well as develop another 3D model as progress for our final project.
+        </p>
+        <hr>
+        <div class="subsection">
+          <h3>working with arduino</h3>
+          <p>
+            After learning so much about programming in Arduino, I was ready to finally get into programming the board, but this is when I remembered the issues that I had been runnning into for a few days.
+          </p>
+          <hr>
+          <div class="subsubsection">
+            <h4>problems with the board</h4>
+            <p>
+              The biggest issue I ran into whilst creating this wasn't actually coding the buttons and LED's, however; it was actually getting my Arduino to work. I tried restarting Arduino, restarting my computer, switching to the ESP32 board, but alas, nothing happened. I even tried a few different cables to plug into my computer, but they provided no satisfactory results either. I even inquired with Rob and Victoria, and none of us could isolate the issue for quite a while. In the meantime, I tried coding the circuit to do what I wanted, so I would be able to just upload the code into the circuit once I got the board itself to work.
+            </p>
+          </div>
+          <hr>
+          <div class="subsubsection">
+            <h4>fixing the issue</h4>
+            <p>
+              In the end, the issue lay exactly with which cable I was using, as I was only able to find cables that provided power without control, and when I found a small cable that also provided control, I was finally able to connect to the right serial port. After all of that hard work, I was finally able to properly communicate to my Arduino board once again. I learned a lot about how different things can affect communication between a computer and the Arduino board, but learned that it's extremely important to distinguish which cables will provide both power and control, and which won't.
+            </p>
+            <div class="image">
+              <img src="arduino_port.png" alt="fixing the arduino port">
+            </div>
+            <p>
+              Finally, I had gotten it to work! I informed Rob and Victoria that their final suggestion ofchanging out the cable one more time was the correct solution.
+            </p>
+          </div>
+          <hr>
+          <div class="subsubsection">
+            <h4>the results</h4>
+            <p>
+              Once I had finally gotten the board to work, I was excited to start wiring up the circuit and coding it. I wanted to control two separate LEDs, with one turning on and the other turning on depending on the parity of button pushes (one for even, one for odd). This is a similar idea to some of my other classmates, and I was excited to see what I would get. My code can be seen here.
+            </p>
+            <div class="code">
+              <pre>
+                <code class="language-arduino">
 
+                </code>
+              </pre>
+            </div>
+            <p>
+              Unfortunately, when wiring it, I did run into some trouble with actually executing the code. The wiring should be correct, though I will see if I can modify it in coming classes.
+            </p>
+            <div class="image">
+              <img src="conditionals.jpg" alt="conditionals circuit">
+            </div>
+            <p>
+              With that very long journey, part one was (mostly) complete. I was (more or less) ready to move on to the 3D modeling.
+            </p>
+          </div>
+          <hr>
+          <p></p>
+        </div>
+        <hr>
+        <div class="subsection">
+          <h3>modeling in fusion360</h3>
+          <p>
+            Thankfully, 3D modeling didn't give me nearly as much practical trouble. Instead, it gave me a slightly different kind of trouble, as some of the functions were not working with me. Selecting proper bodies and working with the right axes is still annoying, as selecting multiple at once or choosing them in the wrong order can result in errors that will not yield the proper results. After a lot of fiddling and a lot of measuring, I settled on a basic design for the outer hull of one of my proposed final projects: the useless machine. One part will contain the little figurine that will do all of the communicating to the human, and the other will house the Arduino board along with all of the circuitry. I added an impress on the side as an indicator of where the button/switch to activate the thing will be.
+
+          </p>
+          <div class="image">
+            <img src="3d-model.png" alt="basic 3d model design">
+          </div>
+          <p>I would eventually decide on not using this for my final project, as I chose the lamp idea as my final proposal.</p>
+        </div>
+        <hr>
+        <div class="subsection">
+          <h3>thinking more about the final project</h3>
+          <p>
+            I also spent some more time thinking about the final project, and trying to decide exactly which proposal I should roll with. I would keep pondering this for a few days afterward. All information pertaining to that can be found in the final project tab above.
+          </p>
+        </div>
+        <hr>
+        <p>
+          This was overall a long week for me, as a lot managed to happen. However, I did gain a lot of knowledge about how these boards, Arduino, and Fusion360 work. Even if I did not get the results from the board that I wanted, I learned how to troubleshoot these errors.
         </p>
       </div>
       <hr>
