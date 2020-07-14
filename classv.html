@@ -104,7 +104,7 @@
         <div class="subsection">
           <h3>breakout rooms 1: counting button pushes</h3>
           <p>
-            In the first breakout room session, we focused on applying what we learned to count the number of button pushes. The way to do this is quite simple: since we can check button state, all we need to do is check the button state and compare it to the very previous button state. In other words, we start off with the state as <code>LOW</code> (off) for example, and then whenever the button is pushed, we change the state to either <code>HIGH</code> (on) or <code>LOW</code> (off), depending on what the current state of the button is. Then, as soon as the state is changed, increment an integer variable <code>button_pushes</code> by 1. This way, every time the state changes, we know the button has been pushed, and so we increment. Here is an example of that in action.
+            In the first breakout room session, we focused on applying what we learned to count the number of button pushes. The way to do this is quite simple: since we can check button state, all we need to do is check the button state and compare it to the very previous button state. In other words, we start off with the state as <code>HIGH</code> (off) for example, and then whenever the button is pushed, we change the state to either <code>LOW</code> (on) or <code>HIGH</code> (off), depending on what the current state of the button is. Then, as soon as the state is changed, increment an integer variable <code>button_pushes</code> by 1. This way, every time the state changes, we know the button has been pushed, and so we increment. Here is an example of that in action.
           </p>
           <div class="code">
             <pre>
@@ -133,8 +133,19 @@
         <div class="subsection">
           <h3>breakout rooms 2: controlling leds with <code>for()</code> loops</h3>
           <p>
-            Now that we had some practice with implementing <code>if()</code> conditionals into our code, we were ready to practice controlling LEDs with some <code>for()</code> loops.
+            Now that we had some practice with implementing <code>if()</code> conditionals into our code, we were ready to practice controlling multiple LEDs with some <code>for()</code> loops.
           </p>
+          <div class="code">
+            <pre>
+              <code class="language-arduino">
+                const int button_1 = 3; // button 1
+                const int button_2 = 4; // button 2
+                int
+              </code>
+            </pre>
+          </div>
+          <hr>
+          <p>The breakout room sections are now complete.</p>
         </div>
         <hr>
         <p>With that practice, I was ready to move on to the assignment!</p>
