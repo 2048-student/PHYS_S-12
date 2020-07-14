@@ -135,7 +135,7 @@ color:#5e6472;
   padding:7px;
 }
 /*--------------------media (photos/videos)----------------------*/
-.image{
+.image,.video{
   margin-left:10px;
   margin-right:10px;
   margin-top:7px;
