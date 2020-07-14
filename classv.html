@@ -218,7 +218,53 @@
             <div class="code">
               <pre>
                 <code class="language-arduino">
+                  // set pin values (as constants)
+                  const int green = 3;
+                  const int blue = 4;
+                  const int btn = 5;
 
+                  // define non-constant variables
+                  int state = 0; // current state
+                  int prev = 0 ; // previous state
+                  int pushes = 0; // # of pushes
+
+                  // set the LED pins as outputs and the button pin as input
+                  void setup(){
+                    pinMode (green, OUTPUT);
+                    pinMode (blue, OUTPUT);
+                    pinMode (btn, INPUT);
+                  }
+
+                  // main method
+                  void loop(){
+                    state = digitalRead (btn);  // get the state
+                    // check if button has been pushed, and increment # of pushes accordingly
+                    if (state != prev) {
+                      if (state == HIGH) pushes ++;
+                      delay (100);
+                      prev = state;
+                    }
+
+                    // if button is pushed, execute following
+                    if (state == LOW){
+                      // if the parity is even, turn on the green LED
+                      if (pushes % 2 == 0){
+                        digitalWrite (blue, LOW);
+                        digitalWrite (green, HIGH);
+                      }
+                      // if the parity is odd, turn on the blue LED
+                      else if (pushes % 2 == 1){
+                        digitalWrite (blue, HIGH);
+                        digitalWrite (green, LOW);
+                      }
+                    }
+                    // account for case when the button wasn't pushed at all
+                    // in that instance, keep both LEDs off
+                    digitalWrite (blue, LOW);
+                    digitalWrite (green, LOW);
+
+                    delay (500);
+                  }
                 </code>
               </pre>
             </div>
