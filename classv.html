@@ -98,7 +98,7 @@
       <div class="section">
         <h2>breakout rooms 1: counting button pushes</h2>
         <p>
-          In the first breakout room session, we focused on applying what we learned to count the number of button pushes. The way to do this is quite simple: since we can check button state, all we need to do is check the button state and compare it to the very previous button state. In other words, we start off with the state as <code>OFF</code> for example, and then whenever the button is pushed, we change the state to either <code>ON</code> or <code>OFF</code>, depending on what the current state of the button is. Then, as soon as the state is changed, increment an integer variable <code>button_pushes</code> by 1. This way, every time the state changes, we know the button has been pushed, and so we increment. Here is an example of that in action.
+          In the first breakout room session, we focused on applying what we learned to count the number of button pushes. The way to do this is quite simple: since we can check button state, all we need to do is check the button state and compare it to the very previous button state. In other words, we start off with the state as <code>LOW</code> (off) for example, and then whenever the button is pushed, we change the state to either <code>HIGH</code> (on) or <code>LOW</code> (off), depending on what the current state of the button is. Then, as soon as the state is changed, increment an integer variable <code>button_pushes</code> by 1. This way, every time the state changes, we know the button has been pushed, and so we increment. Here is an example of that in action.
         </p>
         <div class="code">
           <pre>
