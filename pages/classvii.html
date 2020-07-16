@@ -139,7 +139,14 @@
             <div class="code">
               <pre>
                 <code class="language-arduino">
-
+                  void setup(){
+                     Serial.begin(9600);
+                   }
+                   void loop(){
+                     int val = analogRead(A0);  // read Hall sensor value
+                     Serial.println(val);
+                     delay(25);
+                   }
                 </code>
               </pre>
             </div>
