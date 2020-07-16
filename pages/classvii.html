@@ -141,9 +141,11 @@
             <div class="code">
               <pre>
                 <code class="language-arduino">
+                  // nothign necessary other than initialization
                   void setup(){
                      Serial.begin(9600);
                    }
+                   // read the value given and delay a little bit
                    void loop(){
                      int val = analogRead(A0);  // read Hall sensor value
                      Serial.println(val);
