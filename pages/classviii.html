@@ -201,6 +201,23 @@
               <p>
                 The first issue I wanted to confront and understand (and hopefully try to solve) was volume toggling. The buzzer has a specific volume at which it produces sounds, and being able to produce dynamics with volume toggling was a plan of mine.
               </p>
+              <hr>
+              <div class="subsubsubsubsection">
+                <h6>going through libraries</h6>
+                <p>
+                  After the lab consultation, Nathan and Victoria posted to an old student's documentation page for 8-bit volume control. He implemented an independent library to produce a togglable speaker. His page is available <a href="https://abrahamjm.github.io/physci70-assignments-ajm/08_output/index.html">here</a>, and the documentation for the library implemented there is available <a href="https://github.com/connornishijima/arduino-volume1">here</a>. There were some other libraries I scrolled through, but unfortunetely, none of them compiled with my Huzzah board. I even tried lying about the board I was using (inputting Metro) to see if it even compiled, but ended up getting an extremely long error message.
+                </p>
+                <div class="image">
+                  <img src="PHYS_S-12/img/error.png" alt="error">
+                </div>
+              </div>
+              <hr>
+              <div class="subsubsubsubsection">
+                <h6>samd incompatibility</h6>
+                <p>
+                  After some more examination of the error message, we finally isolated the problem: all of the libraries used with the volume toggling were only compatible with <u>AVR> architecture, found in older Arduino board models. The boards we use in class, however, use SAMD architecture, and the libraries are currently not compatible with SAMD architecture. The only option I had left was creating my own library, which I decided not to do. I instead decided to just abandon this, though I did learn a lot about how volume toggling would even work.
+                </p>
+              </div>
             </div>
             <hr>
             <div class="subsubsubsection">
