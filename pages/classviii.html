@@ -295,6 +295,7 @@
                   <code class="language-arduino">
                     /* ===============================================================
                     // NOTE DEFINITIONS (FOR SIMPLICITY) -- FROM B2 TO B7 //
+                    // NOTE: MUST ADD note FOR F, AS THAT IS DIFFERENT FUNCTION
                     // =============================================================== */
                     // define C3-C7
                     void C(int pin, int duration, int delayTime, int octave){
@@ -315,7 +316,7 @@
                       delay(delayTime);
                     }
                     // define D3-D7
-                    void CSDF(int pin, int duration, int delayTime, int octave){
+                    void D(int pin, int duration, int delayTime, int octave){
                       if     (octave == 3){myTone(pin, 147, duration);}
                       else if(octave == 4){myTone(pin, 294, duration);}
                       else if(octave == 5){myTone(pin, 587, duration);}
@@ -324,7 +325,7 @@
                       delay(delayTime);
                     }
                     // define DS3/EF3-DS7/EF7
-                    void CSDF(int pin, int duration, int delayTime, int octave){
+                    void DSEF(int pin, int duration, int delayTime, int octave){
                       if     (octave == 3){myTone(pin, 156, duration);}
                       else if(octave == 4){myTone(pin, 311, duration);}
                       else if(octave == 5){myTone(pin, 622, duration);}
@@ -333,7 +334,7 @@
                       delay(delayTime);
                     }
                     // define E3-E7
-                    void CSDF(int pin, int duration, int delayTime, int octave){
+                    void E(int pin, int duration, int delayTime, int octave){
                       if     (octave == 3){myTone(pin, 165, duration);}
                       else if(octave == 4){myTone(pin, 330, duration);}
                       else if(octave == 5){myTone(pin, 659, duration);}
@@ -342,7 +343,8 @@
                       delay(delayTime);
                     }
                     // define F3-F7
-                    void CSDF(int pin, int duration, int delayTime, int octave){
+                    // SEE ABOVE FOR WHY 'note' ADDED
+                    void Fnote(int pin, int duration, int delayTime, int octave){
                       if     (octave == 3){myTone(pin, 175, duration);}
                       else if(octave == 4){myTone(pin, 349, duration);}
                       else if(octave == 5){myTone(pin, 698, duration);}
@@ -351,7 +353,7 @@
                       delay(delayTime);
                     }
                     // define FS3/GF3-FS7/GF7
-                    void CSDF(int pin, int duration, int delayTime, int octave){
+                    void FSGF(int pin, int duration, int delayTime, int octave){
                       if     (octave == 3){myTone(pin, 185, duration);}
                       else if(octave == 4){myTone(pin, 370, duration);}
                       else if(octave == 5){myTone(pin, 740, duration);}
@@ -360,7 +362,7 @@
                       delay(delayTime);
                     }
                     // define G3-G7
-                    void CSDF(int pin, int duration, int delayTime, int octave){
+                    void G(int pin, int duration, int delayTime, int octave){
                       if     (octave == 3){myTone(pin, 196, duration);}
                       else if(octave == 4){myTone(pin, 392, duration);}
                       else if(octave == 5){myTone(pin, 784, duration);}
@@ -369,7 +371,7 @@
                       delay(delayTime);
                     }
                     // define GS3/AF3-GS7/AF7
-                    void CSDF(int pin, int duration, int delayTime, int octave){
+                    void GSAF(int pin, int duration, int delayTime, int octave){
                       if     (octave == 3){myTone(pin, 208, duration);}
                       else if(octave == 4){myTone(pin, 415, duration);}
                       else if(octave == 5){myTone(pin, 831, duration);}
@@ -378,7 +380,7 @@
                       delay(delayTime);
                     }
                     // define A3-A7
-                    void CSDF(int pin, int duration, int delayTime, int octave){
+                    void A(int pin, int duration, int delayTime, int octave){
                       if     (octave == 3){myTone(pin, 220, duration);}
                       else if(octave == 4){myTone(pin, 440, duration);}
                       else if(octave == 5){myTone(pin, 880, duration);}
@@ -387,7 +389,7 @@
                       delay(delayTime);
                     }
                     // define AS3/BF3-AS7/BF7
-                    void CSDF(int pin, int duration, int delayTime, int octave){
+                    void ASBF(int pin, int duration, int delayTime, int octave){
                       if     (octave == 3){myTone(pin, 233, duration);}
                       else if(octave == 4){myTone(pin, 466, duration);}
                       else if(octave == 5){myTone(pin, 932, duration);}
