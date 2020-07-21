@@ -2,7 +2,7 @@ body,.main{
   background-color:#fff;
 }
 /*-------------------------text styling---------------------------*/
-h1,h2,h3,h4,h5,h6,p,li{
+h1,h2,h3,h4,h5,h6,p,u,li{
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   color:#5e6472;
   padding-left: 20px;
