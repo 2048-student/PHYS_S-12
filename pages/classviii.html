@@ -55,22 +55,119 @@
       </div>
       <hr>
       <div class="section">
-        <h2>nothing yet!</h2>
+        <h2>understanding output devices</h2>
           <p>
-
+            In the previous class, we worked with electronic input devices, such as sensors and buttons. During this session, we worked with understanding output devices and how they can be used.
+          </p>
+          <hr>
+          <div class="subsection">
+            <h3>types of output devices</h3>
+            <p>
+              A quick overview of the different types of output devices we can be using from our kit, or in general.
+            </p>
+            <hr>
+            <div class="subsubection">
+              <h4>light outputs</h4>
+              <p>
+                The most basic types of outputs that come in our kit (and that exist in general) are light outputs. These typically come in the form of LEDs, and our kit contains visible and IR LEDs as outputs.
+              </p>
+            </div>
+            <hr>
+            <div class="subsubection">
+              <h4>sound outputs</h4>
+              <p>
+                Another common output device is a speaker/buzzer, wich will produce a sound output. Our kits come equipped with a simple buzzer as sound output.
+              </p>
+            </div>
+            <hr>
+            <div class="subsubection">
+              <h4>motion outputs</h4>
+              <p>
+                There is one final type of output device found in our kit (though there are many other types of output devices found elsewhere), which is the motion output. With this, I refer to motors. We have servo motors and stepper motors in our kit as the simplest.
+              </p>
+            </div>
+            <hr>
+            <p>
+              There are, of course, other types of output devices found elsewhere, with different voltage inputs etc. However, this is what we have in our kit.
+            </p>
+          </div>
+          <hr>
+          <p>
+            With these outputs understood, we are able to work with a few of them. More documentation can be found on <a href="https://roberthart56.github.io/SCFAB/SC_lab/Output_Devices/output.html">Rob's GitHub page</a>.
           </p>
       </div>
       <hr>
       <div class="section">
-        <h2>breakout rooms: buzzers and leds!</h2>
+        <h2>breakout rooms: working the outputs!</h2>
         <p>
+          During the breakout rooms, we worked with some of our basic output devices, which would serve as good practice for our assignments (and by extension final projects).
+        </p>
+        <hr>
+        <div class="subsection">
+          <h3>breakout rooms 1: buzzers and leds</h3>
+          <p>
+            With the first session of breakout rooms, we worked with wiring up a buzzer and LEDs to our boards, and make them produce outputs.
+            <hr>
+            <div class="subsubsection">
+              <h4>the buzzer</h4>
+              <p>
+                We first worked with getting the buzzer to produce a sound. I had to download a bunch of extra libraries, as I had switched to the Huzzah board, which doesn't support a lot of the built-in libraries for many of these outputs that the Metro supports. Eventually, I did end up getting the buzzer to produce an output. I would use the buzzer in my assignment, as I worked more deeply with it and wanted to see just how much I can manipulate it with the simple Huzzah board.
+              </p>
+            </div>
+            <hr>
+            <div class="subsubection">
+              <h4>the leds</h4>
+              <p>
+                Next, we quickly made the LEDs light up in a given order. This one was a bit more complicated, but I did get it to work in the end. Similarly with the buzzer, I had to define some of my own functions to make it compatible with the Huzzah, though the code was given, and I had to simply implement it. My project does involve using LEDs (or at least light outputs), so I will continue pursuing them and working as much as I can with them.
+              </p>
+            </div>
+            <hr>
+            <p>
+              A lot of the instructions and documentation for the code and the circuitry used can be found on <a href="https://nathanmelenbrink.github.io/intro-dig-fab/08_output/led-buzzers">Nathan's GitHub page</a>. As a note, he wired it up to the Metro, so for the Huzzah, different wiring will be required. Along with this, the separate helper functions defined in the code will also be necessary for the devices to produce the desired outputs.
+            </p>
+        </div>
+        <hr>
+        <div class="subsection">
+          <h3>breakout rooms 2: servo motors</h3>
+          <p>
+            With this session of breakout rooms, we worked with getting the servo motor to work, to better understand motors as output devices.
+          </p>
+          <hr>
+          <div class="subsubection">
+            <h4>some trouble with the servo</h4>
+            <p>
+              I ended up having some trouble with the servo motor wiring, which I initially attributed to the board I was using. I tried including extra libraries, wiring in different ways, and even consulting the instructors.
+            </p>
+          </div>
+          <hr>
+          <div class="subsubection">
+            <h4>success!</h4>
+            <p>
+              In the end, it turned out that I hadn't grounded properly (the Huzzah is small, so seeing exactly where the pins are is a little difficult). With that working, I finally managed to get my servo motor to move.
+            </p>
+          </div>
+          <hr>
+          <div class="subsubection">
+            <h4>quick session on stepper motors</h4>
+            <p>
+              In the final minutes after the breakout rooms (but I will still include that information here), Rob talked about stepper motors, how they work, and how to get them to work. More detailed documentation can be found on <a href="https://roberthart56.github.io/SCFAB/SC_lab/Output_Devices/Motion/steppers.html">his page</a>.
+            </p>
+          </div>
+          <hr>
+          <p>
+            A lot of the instructions and documentation for the code and the circuitry used can (again) be found on <a href="https://nathanmelenbrink.github.io/intro-dig-fab/08_output/servo">Nathan's GitHub page</a>. Once again, he wired it up to the Metro, so for the Huzzah (which I used), different wiring will be required. Fortunately, working the servo motor does not require different coding for the simple functions.
+          </p>
+        </div>
+        <hr>
+        <p>
+          With these basic outputs working, we were ready to start working with the assignment and better understanding these output devices (which would come in handy for our final project).
         </p>
       </div>
       <hr>
       <div class="section">
         <h2>assignment</h2>
         <p>
-          We'll find out soon enough!
+          For the assignment, I decided to work some more with the buzzer, and wanted to see just how much I could manipulate them.
         </p>
       </div>
       <hr>
