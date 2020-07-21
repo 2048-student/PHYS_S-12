@@ -423,6 +423,140 @@
               <p>
                 And so, the entirety code for the Chopin nocturne (right-hand melody) is below.
               </p>
+              <div class="code">
+                <pre>
+                  <code class="language-arduino">
+                    void loop() {
+                      ASBF(buzzerPin, 300, 50, 6);
+                      C(buzzerPin, 300, 50, 7);
+                      CSDF(buzzerPin, 300, 50, 7);
+                      A(buzzerPin, 300, 50, 6);
+                      ASBF(buzzerPin, 300, 50, 6);
+                      FSGF(buzzerPin, 300, 50, 6);
+                      Fnote(buzzerPin, 700, 70, 6);
+                      Fnote(buzzerPin, 700, 70, 6);
+                      Fnote(buzzerPin, 700, 70, 6);
+                      Fnote(buzzerPin, 700, 70, 6);
+                      FSGF(buzzerPin, 300, 50, 6);
+                      Fnote(buzzerPin, 300, 50, 6);
+                      DSEF(buzzerPin, 300, 50, 6);
+                      C(buzzerPin, 300, 50, 6);
+                      CSDF(buzzerPin, 1300, 70, 6);
+                      ASBF(buzzerPin, 500, 250, 5);
+                      //--//
+                      ASBF(buzzerPin, 150, 20, 6);
+                      C(buzzerPin, 150, 20, 7);
+                      CSDF(buzzerPin, 150, 20, 7);
+                      A(buzzerPin, 150, 20, 6);
+                      ASBF(buzzerPin, 150, 20, 6);
+                      A(buzzerPin, 150, 20, 6);
+                      GSAF(buzzerPin, 150, 20, 6);
+                      A(buzzerPin, 150, 20, 6);
+                      C(buzzerPin, 150, 20, 7);
+                      ASBF(buzzerPin, 150, 20, 6);
+                      FSGF(buzzerPin, 150, 20, 6);
+                      Fnote(buzzerPin, 150, 20, 6);
+                      FSGF(buzzerPin, 150, 20, 6);
+                      E(buzzerPin, 150, 20, 6);
+                      Fnote(buzzerPin, 150, 20, 6);
+                      ASBF(buzzerPin, 150, 20, 6);
+                      A(buzzerPin, 150, 20, 6);
+                      GSAF(buzzerPin, 150, 20, 6);
+                      G(buzzerPin, 150, 20, 6);
+                      FSGF(buzzerPin, 150, 20, 6);
+                      Fnote(buzzerPin, 150, 20, 6);
+                      E(buzzerPin, 150, 20, 6);
+                      DSEF(buzzerPin, 150, 20, 6);
+                      D(buzzerPin, 150, 20, 6);
+                      CSDF(buzzerPin, 150, 20, 6);
+                      C(buzzerPin, 150, 20, 6);
+                      CSDF(buzzerPin, 150, 20, 6);
+                      C(buzzerPin, 150, 20, 6);
+                      B(buzzerPin, 150, 20, 5);
+                      C(buzzerPin, 150, 20, 6);
+                      Fnote(buzzerPin, 150, 20, 6);
+                      E(buzzerPin, 150, 20, 6);
+                      DSEF(buzzerPin, 150, 50, 6);
+                      CSDF(buzzerPin, 1300, 70, 6);
+                      ASBF(buzzerPin, 700, 100, 5);
+                      //--//
+                      ASBF(buzzerPin, 700, 70, 6);
+                      ASBF(buzzerPin, 700, 70, 6);
+                      ASBF(buzzerPin, 700, 70, 6);
+                      GSAF(buzzerPin, 1900, 100, 6);
+                      CSDF(buzzerPin, 700, 50, 6);
+                      ASBF(buzzerPin, 300, 50, 5);
+                      C(buzzerPin, 300, 50, 6);
+                      CSDF(buzzerPin, 300, 50, 6);
+                      FSGF(buzzerPin, 300, 50, 6);
+                      Fnote(buzzerPin, 1500, 100, 6);
+                      DSEF(buzzerPin, 700, 50, 6);
+                      Fnote(buzzerPin, 300, 50, 6);
+                      DSEF(buzzerPin, 300, 50, 6);
+                      CSDF(buzzerPin, 300, 50, 6);
+                      A(buzzerPin, 300, 50, 5);
+                      GSAF(buzzerPin, 1500, 50, 5);
+                      DSEF(buzzerPin, 700, 50, 6);
+                      Fnote(buzzerPin, 300, 50, 6);
+                      DSEF(buzzerPin, 300, 50, 6);
+                      CSDF(buzzerPin, 300, 50, 6);
+                      DSEF(buzzerPin, 300, 50, 6);
+                      Fnote(buzzerPin, 1300, 100, 6);
+                      //--//
+                      ASBF(buzzerPin, 300, 50, 6);
+                      C(buzzerPin, 300, 50, 7);
+                      CSDF(buzzerPin, 300, 50, 7);
+                      A(buzzerPin, 300, 30, 6);
+                      C(buzzerPin, 100, 20, 7);
+                      ASBF(buzzerPin, 300, 50, 6);
+                      FSGF(buzzerPin, 300, 50, 6);
+                      Fnote(buzzerPin, 700, 70, 6);
+                      Fnote(buzzerPin, 700, 70, 6);
+                      Fnote(buzzerPin, 700, 70, 6);
+                      Fnote(buzzerPin, 700, 70, 6);
+                      FSGF(buzzerPin, 300, 50, 6);
+                      Fnote(buzzerPin, 300, 50, 6);
+                      DSEF(buzzerPin, 300, 50, 6);
+                      C(buzzerPin, 300, 50, 6);
+                      CSDF(buzzerPin, 1300, 70, 6);
+                      ASBF(buzzerPin, 500, 250, 5);
+                      //--//
+                      ASBF(buzzerPin, 150, 20, 6);
+                      C(buzzerPin, 150, 20, 7);
+                      CSDF(buzzerPin, 150, 20, 7);
+                      A(buzzerPin, 150, 20, 6);
+                      ASBF(buzzerPin, 150, 20, 6);
+                      A(buzzerPin, 150, 20, 6);
+                      GSAF(buzzerPin, 150, 20, 6);
+                      A(buzzerPin, 150, 20, 6);
+                      C(buzzerPin, 150, 20, 7);
+                      ASBF(buzzerPin, 150, 20, 6);
+                      FSGF(buzzerPin, 150, 20, 6);
+                      Fnote(buzzerPin, 150, 20, 6);
+                      Fnote(buzzerPin, 150, 20, 8);
+                      E(buzzerPin, 150, 20, 8);
+                      DSEF(buzzerPin, 150, 20, 8);
+                      CSDF(buzzerPin, 150, 20, 8);
+                      C(buzzerPin, 150, 20, 8);
+                      ASBF(buzzerPin, 150, 20, 7);
+                      FSGF(buzzerPin, 150, 20, 7);
+                      Fnote(buzzerPin, 150, 20, 7);
+                      E(buzzerPin, 150, 20, 7);
+                      DSEF(buzzerPin, 150, 20, 7);
+                      CSDF(buzzerPin, 150, 20, 7);
+                      C(buzzerPin, 150, 20, 7);
+                      ASBF(buzzerPin, 150, 20, 6);
+                      A(buzzerPin, 150, 20, 6);
+                      FSGF(buzzerPin, 150, 20, 6);
+                      Fnote(buzzerPin, 150, 20, 6);
+                      C(buzzerPin, 150, 20, 6);
+                      CSDF(buzzerPin, 1300, 70, 6);
+                      ASBF(buzzerPin, 700, 2000, 5);
+
+                    }
+                  </code>
+                </pre>
+              </div>
             </div>
             <hr>
             <hr>
