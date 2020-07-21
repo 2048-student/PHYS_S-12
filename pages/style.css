@@ -114,6 +114,14 @@ color:#5e6472;
   border: 3px solid #5e6472;
   background-color:#aed9e0;
 }
+.subsubsubsection{
+  margin-left:10px;
+  margin-right:10px;
+  margin-top:5px;
+  margin-bottom:5px;
+  border: 2px solid #5e6472;
+  background-color:#ffa69e;
+}
 .footer{
   position:fixed;
   left:0;
