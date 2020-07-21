@@ -281,7 +281,12 @@
                 <pre>
                   <code class="language-arduino">
                     void NOTE(int pin, int duration, int delayTime, int octave){
-                      // play myTone for appropriate frequency corresponding to octave
+                      // play note with specific frequency, depending on octave parameter
+                      if     (octave == 3){myTone(pin, freq3, duration);}
+                      else if(octave == 4){myTone(pin, freq4, duration);}
+                      else if(octave == 5){myTone(pin, freq5, duration);}
+                      else if(octave == 6){myTone(pin, freq6, duration);}
+                      else if(octave == 7){myTone(pin, freq7, duration);}
                       delay(delayTime);
                     }
                   </code>
