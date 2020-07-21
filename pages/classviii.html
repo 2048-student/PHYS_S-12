@@ -302,107 +302,117 @@
                     // NOTE DEFINITIONS (FOR SIMPLICITY) -- FROM B2 TO B7 //
                     // NOTE: MUST ADD note FOR F, AS THAT IS DIFFERENT FUNCTION
                     // =============================================================== */
-                    // define C3-C7
+                    // define C3-C8
                     void C(int pin, int duration, int delayTime, int octave){
                       if     (octave == 3){myTone(pin, 131, duration);}
                       else if(octave == 4){myTone(pin, 262, duration);}
                       else if(octave == 5){myTone(pin, 523, duration);}
                       else if(octave == 6){myTone(pin, 1047, duration);}
                       else if(octave == 7){myTone(pin, 2093, duration);}
+                      else if(octave == 8){myTone(pin, 4186, duration);}
                       delay(delayTime);
                     }
-                    // define CS3/DF3-CS7/DF7
+                    // define CSDF3-CSDF8
                     void CSDF(int pin, int duration, int delayTime, int octave){
                       if     (octave == 3){myTone(pin, 139, duration);}
                       else if(octave == 4){myTone(pin, 277, duration);}
                       else if(octave == 5){myTone(pin, 554, duration);}
                       else if(octave == 6){myTone(pin, 1109, duration);}
                       else if(octave == 7){myTone(pin, 2217, duration);}
+                      else if(octave == 8){myTone(pin, 4435, duration);}
                       delay(delayTime);
                     }
-                    // define D3-D7
+                    // define D3-D8
                     void D(int pin, int duration, int delayTime, int octave){
                       if     (octave == 3){myTone(pin, 147, duration);}
                       else if(octave == 4){myTone(pin, 294, duration);}
                       else if(octave == 5){myTone(pin, 587, duration);}
                       else if(octave == 6){myTone(pin, 1175, duration);}
                       else if(octave == 7){myTone(pin, 2349, duration);}
+                      else if(octave == 8){myTone(pin, 4699, duration);}
                       delay(delayTime);
                     }
-                    // define DS3/EF3-DS7/EF7
+                    // define DSEF3-DSEF8
                     void DSEF(int pin, int duration, int delayTime, int octave){
                       if     (octave == 3){myTone(pin, 156, duration);}
                       else if(octave == 4){myTone(pin, 311, duration);}
                       else if(octave == 5){myTone(pin, 622, duration);}
                       else if(octave == 6){myTone(pin, 1245, duration);}
                       else if(octave == 7){myTone(pin, 2489, duration);}
+                      else if(octave == 8){myTone(pin, 4978, duration);}
                       delay(delayTime);
                     }
-                    // define E3-E7
+                    // define E3-E8
                     void E(int pin, int duration, int delayTime, int octave){
                       if     (octave == 3){myTone(pin, 165, duration);}
                       else if(octave == 4){myTone(pin, 330, duration);}
                       else if(octave == 5){myTone(pin, 659, duration);}
                       else if(octave == 6){myTone(pin, 1319, duration);}
                       else if(octave == 7){myTone(pin, 2637, duration);}
+                      else if(octave == 8){myTone(pin, 5274, duration);}
                       delay(delayTime);
                     }
-                    // define F3-F7
-                    // SEE ABOVE FOR WHY 'note' ADDED
+                    // define F3-F8
                     void Fnote(int pin, int duration, int delayTime, int octave){
                       if     (octave == 3){myTone(pin, 175, duration);}
                       else if(octave == 4){myTone(pin, 349, duration);}
                       else if(octave == 5){myTone(pin, 698, duration);}
                       else if(octave == 6){myTone(pin, 1397, duration);}
                       else if(octave == 7){myTone(pin, 2794, duration);}
+                      else if(octave == 8){myTone(pin, 5588, duration);}
                       delay(delayTime);
                     }
-                    // define FS3/GF3-FS7/GF7
+                    // define FSGF3-FSGF8
                     void FSGF(int pin, int duration, int delayTime, int octave){
                       if     (octave == 3){myTone(pin, 185, duration);}
                       else if(octave == 4){myTone(pin, 370, duration);}
                       else if(octave == 5){myTone(pin, 740, duration);}
                       else if(octave == 6){myTone(pin, 1480, duration);}
                       else if(octave == 7){myTone(pin, 2960, duration);}
+                      else if(octave == 8){myTone(pin, 5920, duration);}
                       delay(delayTime);
                     }
-                    // define G3-G7
+                    // define G3-G8
                     void G(int pin, int duration, int delayTime, int octave){
                       if     (octave == 3){myTone(pin, 196, duration);}
                       else if(octave == 4){myTone(pin, 392, duration);}
                       else if(octave == 5){myTone(pin, 784, duration);}
                       else if(octave == 6){myTone(pin, 1568, duration);}
                       else if(octave == 7){myTone(pin, 3136, duration);}
+                      else if(octave == 8){myTone(pin, 6272, duration);}
                       delay(delayTime);
                     }
-                    // define GS3/AF3-GS7/AF7
+                    // define GSAF3-GSAF8
                     void GSAF(int pin, int duration, int delayTime, int octave){
                       if     (octave == 3){myTone(pin, 208, duration);}
                       else if(octave == 4){myTone(pin, 415, duration);}
                       else if(octave == 5){myTone(pin, 831, duration);}
                       else if(octave == 6){myTone(pin, 1661, duration);}
                       else if(octave == 7){myTone(pin, 3322, duration);}
+                      else if(octave == 8){myTone(pin, 6645, duration);}
                       delay(delayTime);
                     }
-                    // define A3-A7
+                    // define A3-A8
                     void A(int pin, int duration, int delayTime, int octave){
                       if     (octave == 3){myTone(pin, 220, duration);}
                       else if(octave == 4){myTone(pin, 440, duration);}
                       else if(octave == 5){myTone(pin, 880, duration);}
                       else if(octave == 6){myTone(pin, 1760, duration);}
                       else if(octave == 7){myTone(pin, 3520, duration);}
+                      else if(octave == 8){myTone(pin, 7040, duration);}
                       delay(delayTime);
                     }
-                    // define AS3/BF3-AS7/BF7
+                    // define ASBF3-ASBF8
                     void ASBF(int pin, int duration, int delayTime, int octave){
                       if     (octave == 3){myTone(pin, 233, duration);}
                       else if(octave == 4){myTone(pin, 466, duration);}
                       else if(octave == 5){myTone(pin, 932, duration);}
                       else if(octave == 6){myTone(pin, 1865, duration);}
                       else if(octave == 7){myTone(pin, 3729, duration);}
+                      else if(octave == 8){myTone(pin, 7459, duration);}
                       delay(delayTime);
                     }
-                    // define B2-B7
+                    // define B2-B8
                     void B(int pin, int duration, int delayTime, int octave){
                       if     (octave == 2){myTone(pin, 123, duration);}
                       else if(octave == 3){myTone(pin, 247, duration);}
@@ -410,6 +420,7 @@
                       else if(octave == 5){myTone(pin, 988, duration);}
                       else if(octave == 6){myTone(pin, 1976, duration);}
                       else if(octave == 7){myTone(pin, 3951, duration);}
+                      else if(octave == 8){myTone(pin, 7902, duration);}
                       delay(delayTime);
                     }
                     // ================================================================ //
