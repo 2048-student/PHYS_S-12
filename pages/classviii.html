@@ -275,284 +275,137 @@
               </div>
               <hr>
               <p>
-                The basic structure of the code was simple. I used the <code>myTone()</code> function defined for Huzzah (you can use the predefined <code>tone()</code> function for boards that support that) and defined all the notes depending on the frequency. I also included duration (as in the function), but also included <code>delayTime</code> in between notes, to simulate different types of rests in music. The basic structure of oen note definition is as follows:
+                The basic structure of the code was simple. I used the <code>myTone()</code> function defined for Huzzah (you can use the predefined <code>tone()</code> function for boards that support that) and defined all the notes depending on the frequency. I also included duration (as in the function), but also included <code>delayTime</code> in between notes, to simulate different types of rests in music. The basic structure of one note definition is as follows:
               </p>
               <div class="code">
                 <pre>
                   <code class="language-arduino">
-                    void NOTE(int pin, int duration, int delayTime){
-                      myTone(pin, NOTE-FREQUENCY, duration);
+                    void NOTE(int pin, int duration, int delayTime, int octave){
+                      // play myTone for appropriate frequency corresponding to octave
                       delay(delayTime);
                     }
                   </code>
                 </pre>
               </div>
               <p>
-                This plays the defined note for the given duration, and then pauses for a given amount of time. NOTE, in my code, since sharps and flats can refer to the same note, I first name the sharp note, then the flat. For example, to define a B flat (otherwise known as an A sharp), I will write it as <code>ASBF</code> followed by the octave number, to symbolize A sharp/B flat. The full code for all of the notes can be found below.
+                This plays the defined note for the given duration, and then pauses for a given amount of time. NOTE, in my code, since sharps and flats can refer to the same note, I first name the sharp note, then the flat. For example, to define a B flat (otherwise known as an A sharp), I will write it as <code>ASBF</code>, to symbolize A sharp/B flat. I defined with conditionals for each octave, so that I could group each corresponding note together, and simply define separate frequencies, depending on what the octave number is. This saves a lot of space and time coding-wise, as I no longer have to define 88 different functions, but rather just 12. The full code for all of the notes can be found below.
               </p>
               <div class="code">
                 <pre>
                   <code class="language-arduino">
-                    // ===============================================================
+                    /* ===============================================================
                     // NOTE DEFINITIONS (FOR SIMPLICITY) -- FROM B2 TO B7 //
-                    // NOTE: MUST INCLUDE UNDERSCORE FOR DEFINITIONS OF A NOTES,
-                    // FOR AVOIDANCE OF CONFUSION WITH PIN ON BOARD DURING COMPILATION
-                    // ===============================================================
-                    // octave 2
-                    void B2(int pin, int duration, int delayTime){
-                      myTone(pin, 123, duration);
+                    // =============================================================== */
+                    // define C3-C7
+                    void C(int pin, int duration, int delayTime, int octave){
+                      if     (octave == 3){myTone(pin, 131, duration);}
+                      else if(octave == 4){myTone(pin, 262, duration);}
+                      else if(octave == 5){myTone(pin, 523, duration);}
+                      else if(octave == 6){myTone(pin, 1047, duration);}
+                      else if(octave == 7){myTone(pin, 2093, duration);}
                       delay(delayTime);
                     }
-                    // ------------------------------------------------
-                    // octave 3
-                    void C3(int pin, int duration, int delayTime){
-                      myTone(pin, 131, duration);
+                    // define CS3/DF3-CS7/DF7
+                    void CSDF(int pin, int duration, int delayTime, int octave){
+                      if     (octave == 3){myTone(pin, 139, duration);}
+                      else if(octave == 4){myTone(pin, 277, duration);}
+                      else if(octave == 5){myTone(pin, 554, duration);}
+                      else if(octave == 6){myTone(pin, 1109, duration);}
+                      else if(octave == 7){myTone(pin, 2217, duration);}
                       delay(delayTime);
                     }
-                    void CSDF3(int pin, int duration, int delayTime){
-                      myTone(pin, 139, duration);
+                    // define D3-D7
+                    void CSDF(int pin, int duration, int delayTime, int octave){
+                      if     (octave == 3){myTone(pin, 147, duration);}
+                      else if(octave == 4){myTone(pin, 294, duration);}
+                      else if(octave == 5){myTone(pin, 587, duration);}
+                      else if(octave == 6){myTone(pin, 1175, duration);}
+                      else if(octave == 7){myTone(pin, 2349, duration);}
                       delay(delayTime);
                     }
-                    void D3(int pin, int duration, int delayTime){
-                      myTone(pin, 147, duration);
+                    // define DS3/EF3-DS7/EF7
+                    void CSDF(int pin, int duration, int delayTime, int octave){
+                      if     (octave == 3){myTone(pin, 156, duration);}
+                      else if(octave == 4){myTone(pin, 311, duration);}
+                      else if(octave == 5){myTone(pin, 622, duration);}
+                      else if(octave == 6){myTone(pin, 1245, duration);}
+                      else if(octave == 7){myTone(pin, 2489, duration);}
                       delay(delayTime);
                     }
-                    void DSEF3(int pin, int duration, int delayTime){
-                      myTone(pin, 156, duration);
+                    // define E3-E7
+                    void CSDF(int pin, int duration, int delayTime, int octave){
+                      if     (octave == 3){myTone(pin, 165, duration);}
+                      else if(octave == 4){myTone(pin, 330, duration);}
+                      else if(octave == 5){myTone(pin, 659, duration);}
+                      else if(octave == 6){myTone(pin, 1319, duration);}
+                      else if(octave == 7){myTone(pin, 2637, duration);}
                       delay(delayTime);
                     }
-                    void E3(int pin, int duration, int delayTime){
-                      myTone(pin, 165, duration);
+                    // define F3-F7
+                    void CSDF(int pin, int duration, int delayTime, int octave){
+                      if     (octave == 3){myTone(pin, 175, duration);}
+                      else if(octave == 4){myTone(pin, 349, duration);}
+                      else if(octave == 5){myTone(pin, 698, duration);}
+                      else if(octave == 6){myTone(pin, 1397, duration);}
+                      else if(octave == 7){myTone(pin, 2794, duration);}
                       delay(delayTime);
                     }
-                    void F3(int pin, int duration, int delayTime){
-                      myTone(pin, 175, duration);
+                    // define FS3/GF3-FS7/GF7
+                    void CSDF(int pin, int duration, int delayTime, int octave){
+                      if     (octave == 3){myTone(pin, 185, duration);}
+                      else if(octave == 4){myTone(pin, 370, duration);}
+                      else if(octave == 5){myTone(pin, 740, duration);}
+                      else if(octave == 6){myTone(pin, 1480, duration);}
+                      else if(octave == 7){myTone(pin, 2960, duration);}
                       delay(delayTime);
                     }
-                    void FSGF3(int pin, int duration, int delayTime){
-                      myTone(pin, 185, duration);
+                    // define G3-G7
+                    void CSDF(int pin, int duration, int delayTime, int octave){
+                      if     (octave == 3){myTone(pin, 196, duration);}
+                      else if(octave == 4){myTone(pin, 392, duration);}
+                      else if(octave == 5){myTone(pin, 784, duration);}
+                      else if(octave == 6){myTone(pin, 1568, duration);}
+                      else if(octave == 7){myTone(pin, 3136, duration);}
                       delay(delayTime);
                     }
-                    void G3(int pin, int duration, int delayTime){
-                      myTone(pin, 196, duration);
+                    // define GS3/AF3-GS7/AF7
+                    void CSDF(int pin, int duration, int delayTime, int octave){
+                      if     (octave == 3){myTone(pin, 208, duration);}
+                      else if(octave == 4){myTone(pin, 415, duration);}
+                      else if(octave == 5){myTone(pin, 831, duration);}
+                      else if(octave == 6){myTone(pin, 1661, duration);}
+                      else if(octave == 7){myTone(pin, 3322, duration);}
                       delay(delayTime);
                     }
-                    void GSAF3(int pin, int duration, int delayTime){
-                      myTone(pin, 208, duration);
-                    }
-                    void A_3(int pin, int duration, int delayTime){
-                      myTone(pin, 220, duration);
+                    // define A3-A7
+                    void CSDF(int pin, int duration, int delayTime, int octave){
+                      if     (octave == 3){myTone(pin, 220, duration);}
+                      else if(octave == 4){myTone(pin, 440, duration);}
+                      else if(octave == 5){myTone(pin, 880, duration);}
+                      else if(octave == 6){myTone(pin, 1760, duration);}
+                      else if(octave == 7){myTone(pin, 3520, duration);}
                       delay(delayTime);
                     }
-                    void ASBF3(int pin, int duration, int delayTime){
-                      myTone(pin, 233, duration);
+                    // define AS3/BF3-AS7/BF7
+                    void CSDF(int pin, int duration, int delayTime, int octave){
+                      if     (octave == 3){myTone(pin, 233, duration);}
+                      else if(octave == 4){myTone(pin, 466, duration);}
+                      else if(octave == 5){myTone(pin, 932, duration);}
+                      else if(octave == 6){myTone(pin, 1865, duration);}
+                      else if(octave == 7){myTone(pin, 3729, duration);}
                       delay(delayTime);
                     }
-                    void B3(int pin, int duration, int delayTime){
-                      myTone(pin, 247, duration);
+                    // define B2-B7
+                    void B(int pin, int duration, int delayTime, int octave){
+                      if     (octave == 2){myTone(pin, 123, duration);}
+                      else if(octave == 3){myTone(pin, 247, duration);}
+                      else if(octave == 4){myTone(pin, 494, duration);}
+                      else if(octave == 5){myTone(pin, 988, duration);}
+                      else if(octave == 6){myTone(pin, 1976, duration);}
+                      else if(octave == 7){myTone(pin, 3951, duration);}
                       delay(delayTime);
                     }
-                    // -------------------------------------------
-                    // octave 4
-                    void C4(int pin, int duration, int delayTime){
-                      myTone(pin, 262, duration);
-                      delay(delayTime);
-                    }
-                    void CSDF4(int pin, int duration, int delayTime){
-                      myTone(pin, 277, duration);
-                      delay(delayTime);
-                    }
-                    void D4(int pin, int duration, int delayTime){
-                      myTone(pin, 294, duration);
-                      delay(delayTime);
-                    }
-                    void DSEF4(int pin, int duration, int delayTime){
-                      myTone(pin, 311, duration);
-                      delay(delayTime);
-                    }
-                    void E4(int pin, int duration, int delayTime){
-                      myTone(pin, 330, duration);
-                      delay(delayTime);
-                    }
-                    void F4(int pin, int duration, int delayTime){
-                      myTone(pin, 349, duration);
-                      delay(delayTime);
-                    }
-                    void FSGF4(int pin, int duration, int delayTime){
-                      myTone(pin, 370, duration);
-                      delay(delayTime);
-                    }
-                    void G4(int pin, int duration, int delayTime){
-                      myTone(pin, 392, duration);
-                      delay(delayTime);
-                    }
-                    void GSAF4(int pin, int duration, int delayTime){
-                      myTone(pin, 415, duration);
-                      delay(delayTime);
-                    }
-                    void A_4(int pin, int duration, int delayTime){
-                      myTone(pin, 440, duration);
-                      delay(delayTime);
-                    }
-                    void ASBF4(int pin, int duration, int delayTime){
-                      myTone(pin, 466, duration);
-                      delay(delayTime);
-                    }
-                    void B4(int pin, int duration, int delayTime){
-                      myTone(pin, 494, duration);
-                      delay(delayTime);
-                    }
-                    // ----------------------------------------------
-                    // octave 5
-                    void C5(int pin, int duration, int delayTime){
-                      myTone(pin, 523, duration);
-                      delay(delayTime);
-                    }
-                    void CSDF5(int pin, int duration, int delayTime){
-                      myTone(pin, 554, duration);
-                      delay(delayTime);
-                    }
-                    void D5(int pin, int duration, int delayTime){
-                      myTone(pin, 587, duration);
-                      delay(delayTime);
-                    }
-                    void DSEF5(int pin, int duration, int delayTime){
-                      myTone(pin, 622, duration);
-                      delay(delayTime);
-                    }
-                    void E5(int pin, int duration, int delayTime){
-                      myTone(pin, 659, duration);
-                      delay(delayTime);
-                    }
-                    void F5(int pin, int duration, int delayTime){
-                      myTone(pin, 698, duration);
-                      delay(delayTime);
-                    }
-                    void FSGF5(int pin, int duration, int delayTime){
-                      myTone(pin, 740, duration);
-                      delay(delayTime);
-                    }
-                    void G5(int pin, int duration, int delayTime){
-                      myTone(pin, 784, duration);
-                      delay(delayTime);
-                    }
-                    void GSAF5(int pin, int duration, int delayTime){
-                      myTone(pin, 831, duration);
-                      delay(delayTime);
-                    }
-                    void A_5(int pin, int duration, int delayTime){
-                      myTone(pin, 880, duration);
-                      delay(delayTime);
-                    }
-                    void ASBF5(int pin, int duration, int delayTime){
-                      myTone(pin, 932, duration);
-                      delay(delayTime);
-                    }
-                    void B5(int pin, int duration, int delayTime){
-                      myTone(pin, 988, duration);
-                      delay(delayTime);
-                    }
-                    // ----------------------------------------------
-                    // octave 6
-                    void C6(int pin, int duration, int delayTime){
-                      myTone(pin, 1047, duration);
-                      delay(delayTime);
-                    }
-                    void CSDF6(int pin, int duration, int delayTime){
-                      myTone(pin, 1109, duration);
-                      delay(delayTime);
-                    }
-                    void D6(int pin, int duration, int delayTime){
-                      myTone(pin, 1175, duration);
-                      delay(delayTime);
-                    }
-                    void DSEF6(int pin, int duration, int delayTime){
-                      myTone(pin, 1245, duration);
-                      delay(delayTime);
-                    }
-                    void E6(int pin, int duration, int delayTime){
-                      myTone(pin, 1319, duration);
-                      delay(delayTime);
-                    }
-                    void F6(int pin, int duration, int delayTime){
-                      myTone(pin, 1397, duration);
-                      delay(delayTime);
-                    }
-                    void FSGF6(int pin, int duration, int delayTime){
-                      myTone(pin, 1480, duration);
-                      delay(delayTime);
-                    }
-                    void G6(int pin, int duration, int delayTime){
-                      myTone(pin, 1568, duration);
-                      delay(delayTime);
-                    }
-                    void GSAF6(int pin, int duration, int delayTime){
-                      myTone(pin, 1661, duration);
-                      delay(delayTime);
-                    }
-                    void A_6(int pin, int duration, int delayTime){
-                      myTone(pin, 1760, duration);
-                      delay(delayTime);
-                    }
-                    void ASBF6(int pin, int duration, int delayTime){
-                      myTone(pin, 1865, duration);
-                      delay(delayTime);
-                    }
-                    void B6(int pin, int duration, int delayTime){
-                      myTone(pin, 1976, duration);
-                      delay(delayTime);
-                    }
-                    // ----------------------------------------------
-                    // octave 7
-                    void C7(int pin, int duration, int delayTime){
-                      myTone(pin, 2093, duration);
-                      delay(delayTime);
-                    }
-                    void CSDF7(int pin, int duration, int delayTime){
-                      myTone(pin, 2217, duration);
-                      delay(delayTime);
-                    }
-                    void D7(int pin, int duration, int delayTime){
-                      myTone(pin, 2349, duration);
-                      delay(delayTime);
-                    }
-                    void DSEF7(int pin, int duration, int delayTime){
-                      myTone(pin, 2489, duration);
-                      delay(delayTime);
-                    }
-                    void E7(int pin, int duration, int delayTime){
-                      myTone(pin, 2637, duration);
-                      delay(delayTime);
-                    }
-                    void F7(int pin, int duration, int delayTime){
-                      myTone(pin, 2794, duration);
-                      delay(delayTime);
-                    }
-                    void FSGF7(int pin, int duration, int delayTime){
-                      myTone(pin, 2960, duration);
-                      delay(delayTime);
-                    }
-                    void G7(int pin, int duration, int delayTime){
-                      myTone(pin, 3136, duration);
-                      delay(delayTime);
-                    }
-                    void GSAF7(int pin, int duration, int delayTime){
-                      myTone(pin, 3322, duration);
-                      delay(delayTime);
-                    }
-                    void A_7(int pin, int duration, int delayTime){
-                      myTone(pin, 3520, duration);
-                      delay(delayTime);
-                    }
-                    void ASBF7(int pin, int duration, int delayTime){
-                      myTone(pin, 3729, duration);
-                      delay(delayTime);
-                    }
-                    void B7(int pin, int duration, int delayTime){
-                      myTone(pin, 3951, duration);
-                      delay(delayTime);
-                    }
-                    // ======================================================
+                    // ================================================================ //
                   </code>
                 </pre>
               </div>
