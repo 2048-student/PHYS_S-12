@@ -57,14 +57,14 @@
       <div class="section">
         <h2>understanding wifi and internet connection</h2>
           <p>
-
+            This class focused on understanding how internet works and how we can use it to control boards not in our vicinity through the internet. We discussed LANa and Wifi. More information can be found on <a href="">Nathan's page</a> linked here.
           </p>
       </div>
       <hr>
       <div class="section">
         <h2>breakout rooms: controlling leds with internet</h2>
           <p>
-
+            We worked with LEDs and controlling them through the internet. We used FireBase, which allows us to control them from anywhere in the world, even outside the local network.
           </p>
       </div>
       <hr>
@@ -82,21 +82,101 @@
           <div class="subsubsection">
             <h4>the circuit</h4>
             <p>
-              
+              For the simplest of circuits, I simply decided to replace the LED with the buzzer. However, since the pins didn't align because of the sizes, I wired it a little further. This was meant to resemble Rob's alternate wiring for the LED shown in a Slack channel, and I simply swapped out the LED for a buzzer. The circuit is visible here.
             </p>
+            <div class="image">
+              <img src="/PHYS_S-12/img/buzzerwifi.png" alt="buzzer circuit">
+            </div>
           </div>
           <hr>
           <div class="subsubsection">
             <h4>the code</h4>
             <p>
-
+              The code was a very simple modification on the code we used in the tutorials for the LED, found on <a href="">Nathan's page</a>. I simply made it produce a tone instead of turning the LED on. Of course, it is important to include a definition of the <code>myTone()</code> function here, as I am using the Huzzah.
             </p>
+            <div class="code">
+              <pre>
+                <code class="language-arduino">
+                  #include <WiFi.h>                                                   // esp32 library
+                  #include <FirebaseESP32.h>                                          // firebase library
+
+                  #define FIREBASE_HOST "esp32test-4551b.firebaseio.com"              // the project name address from firebase id
+                  #define FIREBASE_AUTH "PTmClObNucdod9ndF9CuSEd9PkZlg5mVr4f0ib3V"    // the secret key generated from firebase
+                  #define WIFI_SSID "bisWPA"                                          // input your home or public wifi name
+                  #define WIFI_PASSWORD "31415926ab"                                  // password of wifi ssid
+
+                  String fireString = "";                                             // buzzer status received from firebase
+                  int buzzerpin = 5;
+
+                  //Define FirebaseESP32 data object
+                  FirebaseData firebaseData;
+
+                  void setup() {
+                    Serial.begin(9600);
+                    delay(1000);
+                    pinMode(buzzerpin, OUTPUT);
+                    WiFi.begin(WIFI_SSID, WIFI_PASSWORD);                             // try to connect with wifi
+
+                    Serial.print("Connecting to ");
+                    Serial.print(WIFI_SSID);
+                    while (WiFi.status() != WL_CONNECTED) {
+                      Serial.print(".");
+                      delay(500);
+                    }
+
+                    Serial.println();
+                    Serial.print("Connected to ");
+                    Serial.println(WIFI_SSID);
+                    Serial.print("IP Address is : ");
+                    Serial.println(WiFi.localIP());                                   // print local IP address
+                    Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);                     // connect to firebase
+                    Firebase.reconnectWiFi(true);
+                    Firebase.set(firebaseData, "/BUZZER_STATUS", "OFF");              // set initial string of "OFF"
+                  }
+
+                  void loop() {
+
+                    Firebase.get(firebaseData, "/BUZZER_STATUS");                     // get buzzwe status input from firebase
+                    fireString = firebaseData.stringData();                           // change to e.g. intData() or boolData()
+                    Serial.println(fireString);
+
+                    if (fireString == "ON") {                            // compare the input of buzzer status received from firebase
+                      Serial.println("Buzzer has been BUZZED");
+                      myTone(buzzerpin, 1397, 1000);                     // buzz buzzer repeatedly
+                      delay(1000);
+                    }
+
+                    else if (fireString == "OFF") {                      // compare the input of buzzer status received from firebase
+                      Serial.println("Buzzer no longer BUZZING");
+                    }
+
+                    else {
+                      Serial.println("Please send ON/OFF");
+                    }
+
+                    delay(1000);                                        // not strictly necessary
+                  }
+
+                  // define myTone() function for those using Huzzah or other ESP32 boards
+                  void myTone(int pin, int frequency, int duration){
+                    int startTime = millis();
+                    int period = 1000000/frequency;
+                    while ((millis() - startTime) < duration){
+                      digitalWrite(pin, HIGH);
+                      delayMicroseconds(period/2);
+                      digitalWrite(pin, LOW);
+                      delayMicroseconds(period/2);
+                    }
+                  }
+                </code>
+              </pre>
+            </div>
           </div>
           <hr>
           <div class="subsubsection">
             <h4>the results</h4>
             <p>
-
+              I currently was not able to get the website configured, but I can change the status from the FireBase project page, as is visible in the video here.
             </p>
           </div>
           <hr>
