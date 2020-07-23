@@ -54,6 +54,7 @@ u{
   top:0;
   position:fixed;
   width:100%;
+  transition-duration:0.25s;
 }
 .topnav a {
   float: left;
@@ -179,4 +180,22 @@ img,code{
   max-width:100%;
   height:auto;
   object-fit:contain;
+}
+/*------------------button--------------------*/
+.button{
+  background-color:#ffa69e;
+  color:#5e6472;
+  padding: 10px 15px;
+  text-align:center;
+  margin: 7px;
+  cursor:pointer;
+  font-size:15px;
+  display:inline-block;
+  border: 3px solid #5e6472;
+  text-decoration:none;
+  transition-duration:0.25s;
+}
+.button:hover{
+  background-color:#faf3dd;
+  color:#5e6472;
 }
