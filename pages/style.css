@@ -195,6 +195,7 @@ img,code,iframe{
   border: 3px solid #5e6472;
   text-decoration:none;
   transition-duration:0.25s;
+  align:center;
 }
 .button:hover{
   background-color:#faf3dd;
