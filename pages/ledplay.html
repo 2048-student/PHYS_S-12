@@ -2,56 +2,143 @@
 <html class="no-js" lang="en">
 <head>
 	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>PHYS S-12: Introduction to Digital Fabrication</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+		function navBar() {
+			var x = document.getElementById("myTopnav");
+			if (x.className === "topnav") {
+				x.className += " responsive";
+			} else {
+				x.className = "topnav";
+			}
+		}
+	</script>
+	<!--code snippet highlighting-->
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/arduino-light.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/arduino.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/javascript.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/latex.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<!--title-->
+	<title>playing with leds!</title>
 </head>
 
 <body>
-	<button id="turn-on" name="turnon">Turn On </button>
-	<button id="turn-off" name="turnoff">Turn Off </button>
+	<!--navigation-->
+	<div class="topnav" id="myTopnav">
+		<a href="index.html">about me</a>
+		<a href="final.html">final project</a>
+		<a href="classi.html">01</a>
+		<a href="classii.html">02</a>
+		<a href="classiii.html">03</a>
+		<a href="classiv.html">04</a>
+		<a href="classv.html">05</a>
+		<a href="classvi.html">06</a>
+		<a href="classvii.html">07</a>
+		<a href="classviii.html">08</a>
+		<a href="classix.html">09</a>
+		<a href="classx.html">10</a>
+		<a href="classxi.html">11</a>
+		<a href="javascript:void(0);" class="icon" onclick="navBar()"><i class="fa fa-bars"></i></a>
+	</div>
+	<!--main-->
+	<div class="main">
+		<h1>09a: playing with leds!</h1>
+		<hr>
+		<div class="section">
+			<h2>introduction</h2>
+			<p>
+				This is a super-secret page which contains some fun I had with controlling the LED wired into my circuit with the internet! This was demo code provided by Nathan on his page for us to better understand FireBase and how to control things from our websites and in general how to control things remotely. The CSS is mine, but the JS is his. It was still fun to play with it though!
+			</p>
+		</div>
+		<hr>
+		<div class="section">
+			<h2>the led fun</h2>
+			<p>
+				Here you can have some fun with turning an LED wired into a circuit on and off. As a disclaimer: this function probably no longer works, as it has probably been a long time since I disconnected this circuit from my board when you are looking at this. It was still fun while it lasted!
+			</p>
+			<div class="subsection">
+				<h3>the fun</h3>
+				<p>
+					There's been enough chattering here. The buttons are enclosed in the following subsection. Again, they most likely no longer work, but they did work in the test runs, which is what was most important.
+				</p>
+				<hr>
+				<div class="subsubsection">
+					<h4>buttons</h4>
+					<p>
+						Here, you can click one button to make a green LED wired to my circuit turn on, and the other one to make that same LED turn off.
+					</p>
+					<hr>
+					<button class="button" id="turn-on" name="turnon">Turn On </button>
+					<button class="button" id="turn-off" name="turnoff">Turn Off </button>
 
-	<!-- The core Firebase JS SDK is always required and must be listed first -->
-	<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+					<!-- The core Firebase JS SDK is always required and must be listed first -->
+					<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
 
-	<!-- TODO: Add SDKs for Firebase products that you want to use
-	     https://firebase.google.com/docs/web/setup#available-libraries -->
-	<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+					<!-- TODO: Add SDKs for Firebase products that you want to use
+					     https://firebase.google.com/docs/web/setup#available-libraries -->
+					<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
 
-	<script>
-	// Your web app's Firebase configuration
-	var firebaseConfig = {
-		apiKey: "REPLACE_WITH_YOUR_OWN",
-		authDomain: "REPLACE_WITH_YOUR_OWN",
-		databaseURL: "REPLACE_WITH_YOUR_OWN",
-		projectId: "REPLACE_WITH_YOUR_OWN",
-		storageBucket: "REPLACE_WITH_YOUR_OWN",
-		messagingSenderId: "REPLACE_WITH_YOUR_OWN",
-		appId: "REPLACE_WITH_YOUR_OWN"
-	};
+					<script>
+					// Your web app's Firebase configuration
+					var firebaseConfig = {
+						apiKey: "REPLACE_WITH_YOUR_OWN",
+						authDomain: "REPLACE_WITH_YOUR_OWN",
+						databaseURL: "REPLACE_WITH_YOUR_OWN",
+						projectId: "REPLACE_WITH_YOUR_OWN",
+						storageBucket: "REPLACE_WITH_YOUR_OWN",
+						messagingSenderId: "REPLACE_WITH_YOUR_OWN",
+						appId: "REPLACE_WITH_YOUR_OWN"
+					};
 
-	// Initialize Firebase
-	firebase.initializeApp(firebaseConfig);
+					// Initialize Firebase
+					firebase.initializeApp(firebaseConfig);
 
-	// Get a database reference to our blog
-	var ref = firebase.database().ref("/");
+					// Get a database reference to our blog
+					var ref = firebase.database().ref("/");
 
-	// make the buttons call the function below
-	document.getElementById('turn-on').addEventListener('click', turnOn, false);
-	document.getElementById('turn-off').addEventListener('click', turnOff, false);
+					// make the buttons call the function below
+					document.getElementById('turn-on').addEventListener('click', turnOn, false);
+					document.getElementById('turn-off').addEventListener('click', turnOff, false);
 
-	function turnOn(){
-		console.log("turning on");
-		ref.update({
-			"LED_STATUS": "ON"
-		});
-	}
+					function turnOn(){
+						console.log("turning on");
+						ref.update({
+							"LED_STATUS": "ON"
+						});
+					}
 
-	function turnOff(){
-		console.log("turning off");
-		ref.update({
-			"LED_STATUS": "OFF"
-		});
-	}
-    </script>
-
+					function turnOff(){
+						console.log("turning off");
+						ref.update({
+							"LED_STATUS": "OFF"
+						});
+					}
+				 	</script>
+					<hr>
+					<p>
+						Again, these buttons probably don't work anymore, but it was fun while it lasted!
+					</p>
+				</div>
+				<hr>
+				<p>
+					This was overall a fun experiment conducted in the breakout rooms for this class, which taught me a lot about configuing FireBase and controlling things from my board remotely, which would potentially come in real handy for my final project, if I ever wanted to be able to control it remotely.
+					<p>
+			</div>
+			<hr>
+			<p>
+				As a final reminder, these buttons probably don't work anymore (and you'd have no real way of seeing if they worked or not, just take my word for it), but it was still a fun experiment to run in the breakout rooms. As always, more information regarding that class can be found in the class 9 tab above, and documentation regarding how to set this all up and how all of this works can be found on <a href="https://nathanmelenbrink.github.io/intro-dig-fab/09_networking/index.html" target="_blank">Nathan's GitHub page</a> linked here among other places.
+			</p>
+		</div>
+		<hr>
+	</div>
+	<!--footer-->
+	<div class="footer">
+		<p>andrew binder -- phys s-12 documentation -- harvard summer school 2020<p>
+	</div>
 </body>
+</html>
