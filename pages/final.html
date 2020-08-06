@@ -344,12 +344,77 @@
         <div class="subsection">
           <h3>the hardware</h3>
           <p>
-            Here, I detail everything regarding the hardware. Since I had everything planned out, I was ready to start experimenting with how the hardware will come together and work to bend wires in 3 dimensions.
+            Here, I detail everything regarding the hardware. Since I had everything planned out, I was ready to start experimenting with how the hardware will come together and work to bend wires in 3 dimensions. I used Fusion360 for the modeling, Ultimaker Cura for the file slicing, and an Ender 3 Pro 3D printer for the printing.
           </p>
           <hr>
+          <div class="subsubsection">
+            <h4>3d printer shenanigans</h4>
+            <p>
+              To make this final project (specifically the hardware), I knew that I would have to get my hands on 3D-printed parts. Hence, it was only logical that I would buy and assemble an Ender 3 Pro 3D printer. Below is a timelapse of me assembling it.
+            </p>
+            <hr>
+            <div class="video"></div>
+            <hr>
+            <p>
+              I would also use this printer to get all of the 3D-printed parts that I needed for this hardware. More info on that modeling is listed below.
+            </p>
+          </div>
+          <hr>
+          <div class="subsubsection">
+            <h4>the models</h4>
+            <p>
+              I needed to design a few things: the wirebending mechanism and the box container. The wirebending mechanism consists of the mount (that goes onto the outer hull of the stepper motor), feeder (that mounts on top of the mount), and bending apparatus (that sits on the stepper staff thingy).
+            </p>
+            <hr>
+            <div class="subsubsubsection">
+              <h5>the mount</h5>
+              <p>
+                The mount was the simplest part, as it simply had to match the rough dimensions of the stepper motor, with a hole in the middle for the bending apparatus. I modeled it in Fusion360 fairly quickly.
+              </p>
+            </div>
+            <hr>
+            <div class="subsubsubsection">
+              <h5>the feeder</h5>
+              <p>
+                Another important part to get done was the little feeding mechanism that would mount on top of the stepper mount. The wirefeeding mechanism would feed wire into this little hole, which would then feed the wire in a straight line to the bending apparatus. It was important to get these dimensions right, but it still took a short amount of time.
+              </p>
+            </div>
+            <hr>
+            <div class="subsubsubsection">
+              <h5>the bending apparatus</h5>
+              <p>
+                The final part of the bending mechanism was the bending apparatus, which mounts on the interior part of the stepper motor and will actually bend the wire. The most annoying part was getting the hole just right for the apparatus to fit snuggly onto the stepper motor with little-to-no wiggle room. I created several versions of this: one with two stubs, a replica of that with more spacing between the stubs, and one with a single stub.
+              </p>
+            </div>
+            <hr>
+            <div class="subsubsubsection">
+              <h5>the box</h5>
+              <p>
+                Finally, I wanted to make one little box that would house the whole ensemble in a small, clean fashion. I needed the stepper motors to fit snuggly into the holes so that they did not move, as well as leave some room for the wires to come out of the motors and into the circuit board. This was on the simpler side, but still required precision to nail. Seeing also how this was the most tim-consuming print (8.5 hours), I needed to essentially nail it on the first try.
+              </p>
+            </div>
+            <hr>
+            <p>
+              Overall, the models were fairly nice, and they printed well and assembled exactly how I wanted them to.
+            </p>
+          </div>
+          <hr>
+          <div class="subsubsection">
+            <h4>the circuit</h4>
+            <p>
+              Wiring the circuit wasn't that bad, as I found an exemplar online and followed it to the letter to make sure my board functioned how I wanted it to. The wiring can be seen below.
+            </p>
+          </div>
+          <hr>
+          <div class="subsubsection">
+            <h4>the assembly</h4>
+            <p>
+              Now, all that was left was to put it all together, and myhardware would be complete. Below is a picture of the assembled wirebending mechanism, which completes one important half of the project.
+            </p>
+          </div>
           <hr>
           <p>
-            As soon as the hardware is complete, I can focus more of my attention on completing the software aspect, though I am working on both of them sort-of simultaneously. This hardware, though, is certainly the most time-consuming aspect.
+            As soon as the hardware was complete, I was able focus more of my attention on completing the software aspect, though I was working on both of them sort-of simultaneously. This hardware, though, was certainly the most time-consuming aspect, with the planning, modeling, printing, remodeling, reprinting, and assembly.
           </p>
         </div>
         <hr>
@@ -357,9 +422,74 @@
         <div class="subsection">
           <h3>the software</h3>
           <p>
-            Here, I detail everything regarding the software. Since I had everything planned out (just like with the hardware), I was redy to start experimenting with how the software will power the existing hardware and culminate in a 3D wirebending mechanism that can create any 3D shape out of wires that I want (and that are possible). This software, while not as time-consuming as the hardware, was definitely the more technical aspect of the project.
+            Here, I detail everything regarding the software. Since I had everything planned out (just like with the hardware), I was redy to start experimenting with how the software will power the existing hardware and culminate in a 3D wirebending mechanism that can create any 3D shape out of wires that I want (and that are possible). This software, while not as time-consuming as the hardware, was definitely the more technical aspect of the project. All of this code would be completed in Arduino.
           </p>
           <hr>
+          <div class="subsubsection">
+            <h4>making the motors work in tandem</h4>
+            <p>
+              Getting the feeding mechanism and the bending mechanism to actually both work in tandem and not destroy each other was the most integral part to getting this mechanism to work. As soon as I was able to make sure that they could work together, then I could define degrees in terms of steps, and I would be able to then program the bender to bend shapes for me. After extensive scouring and personal edits, I found/modified this block of code that inevitably allowed me to control the two motors together. Below is the code, along with a video demonstration.
+            </p>
+            <hr>
+            <div class="code">
+              <pre>
+                <code class="language-arduino">
+                  #define EN 8      // Enable end of stepper motor, active low
+                  #define X_DIR 5   // X axis stepper motor direction control
+                  #define Y_DIR 6   // Y axis stepper motor direction control
+                  #define Z_DIR 7   // Z axis step motor direction control
+                  #define X_STP 2   // X axis step control
+                  #define Y_STP 3   // Y axis step control
+                  #define Z_STP 4  // Z axis step control
+
+                  void step(boolean dir, byte dirPin, byte stepperPin, int steps) {
+                    digitalWrite(dirPin, dir);
+                    delay(50);
+                    for (int i = 0; i < steps; i++) {
+                      digitalWrite(stepperPin, HIGH);
+                      delayMicroseconds(800);
+                      digitalWrite(stepperPin, LOW);
+                      delayMicroseconds(800);
+                    }
+                  }
+
+                  void setup() {// Set the IO pins used by the stepper motor as outputs
+                    pinMode(X_DIR, OUTPUT); pinMode(X_STP, OUTPUT);
+                    pinMode(Y_DIR, OUTPUT); pinMode(Y_STP, OUTPUT);
+                    // pinMode(Z_DIR, OUTPUT); pinMode(Z_STP, OUTPUT);
+                    pinMode(EN, OUTPUT);
+                    digitalWrite(EN, LOW);
+                  }
+
+                  void loop() {
+                    step(false, X_DIR, X_STP, 100);       // X axis motor reverses 1 turn, 200 steps is one turn
+                    step(false, Y_DIR, Y_STP, 50);        // Y axis motor Reverse 1 turn, 50 steps are one turn
+                    step(true, Y_DIR, Y_STP, 50);         // Y axis motor forward 1 turn, 50 steps is a turn
+                    // step(false, Z_DIR, Z_STP, 200);    // Z axis motor reverses 1 turn, 200 steps is one turn
+                    delay(1000);
+                    // step(true, X_DIR, X_STP, 200);     // X axis motor forward 1 turn, 200 steps for one turn
+                    // step(true, Z_DIR, Z_STP, 200);     // Z axis motor forward 1 turn, 200 steps is one turn
+                    delay(1000);
+                  }
+                </code>
+              </pre>
+            </div>
+            <hr>
+            <div class="video">
+              <iframe width="100%" height="600px" src="https://www.youtube.com/embed/shKJsMwaYzc?autoplay=1"></iframe>
+            </div>
+            <hr>
+            <p>
+              Now that I had these motors working in tandem (and now that I had funnily enough nailed exactly how many steps a 90 degree angle was), I was able to proceed with coding some shapes for the wirebender to bend. I would then show off one of these examples in my demo video and during the presentation of the project.
+            </p>
+          </div>
+          <hr>
+          <div class="subsubsection">
+            <h4>the code</h4>
+            <p>
+              Here I have the completed code for defining degrees and a few shapes that I hand-selected.
+            </p>
+          </div>
           <hr>
           <p>
             As soon as the software is complete, I can focus on bringing the hardware and the software together into a finished version of the final project. The hardware needs to more-or-less exist when I start finalizing the software, even though I am working on them sort-of simultaneously.
