@@ -94,19 +94,99 @@
             </div>
             <hr>
             <p>
-              For thorough documentation on how I made them, scroll to the process below. These were modeled in Fusion360, sliced in Ultimaker Cura, and printed by an Ender 3 Pro.
+              For thorough documentation on how I made them, scroll to the process below. These were modeled in Fusion360, sliced in Ultimaker Cura, and printed by an Ender 3 Pro. Downloadable STL file links on the way.
             </p>
           </div>
           <hr>
           <div class="subsubsection">
             <h4>software</h4>
             <p>
-              Here is the code I used to power this, Arduino and JavaScript.
+              Here is the code I used to power this, Arduino.
             </p>
             <hr>
+            <div class="code">
+              <pre>
+                <code class="language-arduino">
+                  //==============================================================================================================//
+                  //--------------------------------------------- DEFINING VARIABLES ---------------------------------------------//
+
+                  /*STEPPER MOTOR PINS AND CONTROLS*/
+                  #define EN 8                  // enable end of stepper motor, active low
+                  #define X_DIR 5               // x-axis stepper motor direction control --> feeding mechanism
+                  #define Y_DIR 6               // y-axis stepper motor direction control --> bending mechanism
+                  #define Z_DIR 7               // z-axis stepper motor direction control --> NOT necessary for 2D wirebender
+                  #define X_STP 2               // x-axis step control ---------------------> feeding mechanism
+                  #define Y_STP 3               // y-axis step control ---------------------> bending mechanism
+                  #define Z_STP 4               // z-axis step control  --------------------> NOT necessary for 2D wirebender
+
+                  /*CONVERTING BETWEEN STEPS AND REAL-WORLD MEASUREMENTD*/
+                  #define STEPS_PER_DEGREE 0.8 // number of steps per one degree (calibrated during test runs)
+                  #define STEPS_PER_MM    8.62  // number of steps per one millimeter (calibrated during test runs)
+
+                  //---------------------------------------------- HELPER FUNCTIONS ----------------------------------------------//
+
+                  // low-level step control
+                  void step(boolean dir, byte dirPin, byte stepperPin, int steps) {
+                    digitalWrite(dirPin, dir);
+                    delay(50);
+                    for (int i = 0; i < steps; i++) {
+                      digitalWrite(stepperPin, HIGH);
+                      delayMicroseconds(8000);
+                      digitalWrite(stepperPin, LOW);
+                      delayMicroseconds(8000);
+                    }
+                  }
+
+                  // BEND FUNCTION: bend the wire a certain angle in ONE direction (single pin on wirebender)
+                  void bend(int angle) {
+                    step(false, Y_DIR, Y_STP, angle * STEPS_PER_DEGREE);
+                    step(true, Y_DIR, Y_STP, angle * STEPS_PER_DEGREE);
+                    delay(50);
+                  }
+
+                  // FEED FUNCTION: feed the wire a certain length forward into the bending mechanism
+                  void feed(int len) {
+                    step(false, X_DIR, X_STP, len * STEPS_PER_MM);
+                    delay(50);
+                  }
+
+                  // POLYGON FUNCTION: bend a 2-dimensional CONVEX polygon with a certain number of sides and a given side length
+                  // CONVEX because single pin on wirebender
+                  // NOTE: only produces REGULAR POLYGONS by definition
+                  void polygon(int sides, int sidelen){
+                    int angle = 360 / sides;
+                    for(int i = 1; i <= sides; i++){
+                      feed(sidelen);
+                      bend(angle);
+                      delay(50);
+                    }
+                  }
+
+                  //-------------------------------------------- SETUP AND EXECUTION ---------------------------------------------//
+
+                  // SETUP: Set the IO pins used by the stepper motor as outputs
+                  void setup() {
+                    pinMode(X_DIR, OUTPUT); pinMode(X_STP, OUTPUT);
+                    pinMode(Y_DIR, OUTPUT); pinMode(Y_STP, OUTPUT);
+                    // pinMode(Z_DIR, OUTPUT); pinMode(Z_STP, OUTPUT);  // 3rd dimension, not necessary for 2D wirebender
+                    pinMode(EN, OUTPUT);
+                    digitalWrite(EN, LOW);
+                  }
+
+
+                  // MAIN LOOP: test polygons
+                  void loop() {
+                    //feed(100);
+                    polygon(7, 30); // heptagon of side length 30 mm
+                    delay(1000);
+                  }
+                  //==============================================================================================================//
+                </code>
+              </pre>
+            </div>
             <hr>
             <p>
-              For thorough documentation on how I coded this, scroll to the process below.
+              For thorough documentation on how I coded this and how I calibrated the hardware, scroll to the process below.
             </p>
           </div>
           <hr>
