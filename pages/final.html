@@ -99,7 +99,7 @@
             </div>
             <hr>
             <p>
-              For thorough documentation on how I made them, scroll to the process below. These were modeled in Fusion360, sliced in Ultimaker Cura, and printed by an Ender 3 Pro. Downloadable STL file links on the way.
+              For thorough documentation on how I made them, scroll to the process below. These were modeled in Fusion360, sliced in Ultimaker Cura, and printed by an Ender 3 Pro. Downloadable STL file links on the way. The links are broken, attempting to fix them!
             </p>
           </div>
           <hr>
@@ -391,8 +391,12 @@
                 Here are the results produced with this wirebending mechanism. This goes hand-in-hand with the wirefeeding mechanism, and I can now successfully code it to work remotely and bend whatever shapes I like, so long as they are 2-dimensional.
               </p>
               <hr>
-              <div class="image"></div>
-              <div class="video"></div>
+              <div class="image">
+                <img src="/PHYS_S-12/img/wirebender-prototype.jpeg" alt="wirebender prototype">
+              </div>
+              <div class="video">
+                <iframe width="100%" height="600px" src="https://www.youtube.com/embed/shKJsMwaYzc?autoplay=1"></iframe>
+              </div>
               <hr>
               <p>
                 With this complete, the wirebending part of this system was complete, and they could be put together and coded to work.
@@ -515,7 +519,7 @@
             </div>
             <hr>
             <p>
-              Overall, the models were fairly nice, and they printed well and assembled exactly how I wanted them to.
+              Overall, the models were fairly nice, and they printed well and assembled exactly how I wanted them to. All of these are visible in the above window and in the downloadable STL files.
             </p>
           </div>
           <hr>
@@ -607,12 +611,27 @@
           <div class="subsubsection">
             <h4>the code</h4>
             <p>
-              Here I have the completed code for defining degrees and a few shapes that I hand-selected.
+              Here I have the completed code for defining degrees and length.
+            </p>
+            <hr>
+            <div class="code">
+              <pre>
+                <code class="language-arduino">
+                  #define STEPS_PER_DEGREE 0.8 // number of steps per one degree (calibrated during test runs)
+                  #define STEPS_PER_MM    8.62  // number of steps per one millimeter (calibrated during test runs)
+
+                  step(false, Y_DIR, Y_STP, angle * STEPS_PER_DEGREE);
+                </code>
+              </pre>
+            </div>
+            <hr>
+            <p>
+              With the definitions complete and the bender calibrated, I am able to now actually make the bender create shapes, which would finalize the project.
             </p>
           </div>
           <hr>
           <p>
-            As soon as the software is complete, I can focus on bringing the hardware and the software together into a finished version of the final project. The hardware needs to more-or-less exist when I start finalizing the software, even though I am working on them sort-of simultaneously.
+            As soon as the software was completed, I was able to focus on bringing the hardware and the software together into a finished version of the final project. The hardware needed to more-or-less exist when I started finalizing the software, even though I had worked on them sort-of simultaneously.
           </p>
         </div>
         <hr>
@@ -756,6 +775,14 @@
         <h2>thank you!</h2>
         <p>
           Many thanks go out to Nathan, Rob, and Victoria for being amazing teachers and helping me every step of the way, as well as all my classmates for being amazing people that have such incredible imaginations! Thanks also go out to every single resource I used when working through this course. This is definitely a course that I would recommend to anyone interested with a hands-on experience, and I am sure anyone who takes it will enjoy the laid-back but nevertheless rigorous course. While I wish I could've done it at Harvard University in person, I am still happy with what I got.
+        </p>
+      </div>
+      <hr>
+      <!--CLOSER-->
+      <div class="section">
+        <h2>final message: 10 august, 2020</h2>
+        <p>
+          As of 10 August, 2020 (the publishing of this final bit), all documentation of this website has been finalized, and no further documentation will be added to this website. No additional photos, videos, code snippets, models, or commentary will be posted to this site. This website is meant to serve as the documentation of my learning during the Introduction to Digital Fabrication (PHYS S-12) course during Harvard Summer School 2020, and the program officially ended on 10 August. Thus, this website will no longer be edited and nothing will be added to it. This is why my biographical information may no longer be accurate at the time of reading of this page. It has been a fun run, but sadly, the course is over, and thus my documentation is also complete. Thank you to anyone and everyone who helped me along the way, and I am excited for future endeavors!
         </p>
       </div>
       <hr>
